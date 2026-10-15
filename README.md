@@ -29,6 +29,7 @@
 
 ## 📑 Table of Contents
 
+* [🚀 Live Production Demo](#-live-production-demo)
 * [🌐 Platform Overview](#-platform-overview)
 * [🎯 Project Vision & Problem Statement](#-project-vision--problem-statement)
 * [✨ Key Features by Role](#-key-features-by-role)
@@ -46,6 +47,16 @@
 * [📡 REST API Documentation](#-rest-api-documentation)
 * [🧪 Testing & Quality Assurance](#-testing--quality-assurance)
 * [🔮 Future Enhancements](#-future-enhancements)
+
+---
+
+# 🚀 Live Production Demo
+
+The EVENTORIA platform is fully deployed and accessible on the cloud:
+
+* **Production Web App**: 👉 **[https://eventhubpfe.vercel.app](https://eventhubpfe.vercel.app)**
+* **Production REST API**: 👉 **[https://eventoria-api.onrender.com](https://eventoria-api.onrender.com)**
+* **Database Layer**: MongoDB Atlas Cloud Cluster
 
 ---
 
