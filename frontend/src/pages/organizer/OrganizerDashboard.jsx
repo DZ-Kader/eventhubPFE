@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import API from "../../services/api";
 import { 
   Calendar, 
   Users, 
@@ -25,7 +25,7 @@ export default function OrganizerDashboard() {
 
   const fetchMyEvents = async () => {
     try {
-      const res = await axios.get("/api/events/mine");
+      const res = await API.get("/events/mine");
       setEvents(res.data);
     } catch (err) {
       console.error("Failed to load organizer events", err);

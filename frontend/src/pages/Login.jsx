@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import axios from "axios";
+import API from "../services/api";
 import { Mail, Lock, ArrowRight, ShieldCheck, UserCheck, Sparkles } from "lucide-react";
 
 export default function Login() {
@@ -19,7 +19,7 @@ export default function Login() {
     setLoading(true);
 
     try {
-      const res = await axios.post("/api/auth/login", { email, password });
+      const res = await API.post("/auth/login", { email, password });
       login(res.data.token, res.data.user);
 
       // Redirect based on role

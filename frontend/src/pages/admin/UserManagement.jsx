@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import API from "../../services/api";
 import { Users, Shield, UserCheck, Building2 } from "lucide-react";
 
 export default function UserManagement() {
@@ -12,7 +12,7 @@ export default function UserManagement() {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("/api/admin/users");
+      const res = await API.get("/admin/users");
       setUsers(res.data);
     } catch (err) {
       console.error("Failed to fetch user accounts", err);
@@ -23,7 +23,7 @@ export default function UserManagement() {
 
   const handleRoleChange = async (userId, newRole) => {
     try {
-      await axios.put(`/api/admin/users/${userId}/role`, { role: newRole });
+      await API.put(`/admin/users/${userId}/role`, { role: newRole });
       fetchUsers();
     } catch (err) {
       alert("Failed to change user role.");

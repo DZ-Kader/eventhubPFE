@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
-import axios from "axios";
+import API from "../services/api";
 
 const AuthContext = createContext();
 
@@ -13,17 +13,14 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const loadProfile = async () => {
       if (token) {
-        // Configure Axios default header
-        axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
         try {
-          const res = await axios.get("/api/auth/profile");
+          const res = await API.get("/auth/profile");
           setUser(res.data);
         } catch (err) {
           console.error("Token verification failed, logging out", err);
           logout();
         }
       } else {
-        delete axios.defaults.headers.common["Authorization"];
         setUser(null);
       }
       setLoading(false);

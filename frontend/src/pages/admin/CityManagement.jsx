@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import API from "../../services/api";
 import { MapPin, Plus, Trash2, Sparkles } from "lucide-react";
 
 export default function CityManagement() {
@@ -17,7 +17,7 @@ export default function CityManagement() {
 
   const fetchCities = async () => {
     try {
-      const res = await axios.get("/api/cities");
+      const res = await API.get("/cities");
       setCities(res.data);
     } catch (err) {
       console.error("Failed to fetch cities", err);
@@ -32,7 +32,7 @@ export default function CityManagement() {
     setSuccess("");
 
     try {
-      await axios.post("/api/cities", { name, description, image });
+      await API.post("/cities", { name, description, image });
       setSuccess("City added successfully!");
       setName("");
       setDescription("");
@@ -46,7 +46,7 @@ export default function CityManagement() {
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this city?")) return;
     try {
-      await axios.delete(`/api/cities/${id}`);
+      await API.delete(`/cities/${id}`);
       fetchCities();
     } catch (err) {
       alert("Failed to delete city.");

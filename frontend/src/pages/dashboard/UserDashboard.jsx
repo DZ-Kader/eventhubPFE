@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import API from "../../services/api";
 import { Ticket, Heart, Calendar, MapPin, QrCode, Sparkles, CheckCircle2 } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 
@@ -17,8 +17,8 @@ export default function UserDashboard() {
   const fetchUserData = async () => {
     try {
       const [regRes, favRes] = await Promise.all([
-        axios.get("/api/registrations/my-tickets"),
-        axios.get("/api/favorites")
+        API.get("/registrations/my-tickets"),
+        API.get("/favorites")
       ]);
       setRegistrations(regRes.data);
       setFavorites(favRes.data);

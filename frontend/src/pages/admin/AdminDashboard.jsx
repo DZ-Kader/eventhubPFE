@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import API from "../../services/api";
 import { Users, Calendar, Ticket, ShieldCheck, CheckCircle2, XCircle, Clock, AlertTriangle, Sparkles } from "lucide-react";
 
 export default function AdminDashboard() {
@@ -15,8 +15,8 @@ export default function AdminDashboard() {
   const fetchAdminData = async () => {
     try {
       const [statsRes, pendingRes] = await Promise.all([
-        axios.get("/api/admin/stats"),
-        axios.get("/api/events?status=pending")
+        API.get("/admin/stats"),
+        API.get("/events?status=pending")
       ]);
       setStats(statsRes.data);
       setPendingEvents(pendingRes.data.events || []);
@@ -29,7 +29,7 @@ export default function AdminDashboard() {
 
   const handleUpdateStatus = async (eventId, newStatus, reason = "") => {
     try {
-      await axios.put(`/api/admin/events/${eventId}/status`, { status: newStatus, rejectionReason: reason });
+      await API.put(`/admin/events/${eventId}/status`, { status: newStatus, rejectionReason: reason });
       fetchAdminData();
     } catch (err) {
       console.error("Failed to update event status", err);

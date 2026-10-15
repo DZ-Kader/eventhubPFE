@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import API from "../../services/api";
 import { Building2, Plus, Trash2 } from "lucide-react";
 
 export default function VenueManagement() {
@@ -20,8 +20,8 @@ export default function VenueManagement() {
   const fetchData = async () => {
     try {
       const [vRes, cRes] = await Promise.all([
-        axios.get("/api/venues"),
-        axios.get("/api/cities")
+        API.get("/venues"),
+        API.get("/cities")
       ]);
       setVenues(vRes.data);
       setCities(cRes.data);
@@ -39,7 +39,7 @@ export default function VenueManagement() {
     setSuccess("");
 
     try {
-      await axios.post("/api/venues", { name, city, address, capacity });
+      await API.post("/venues", { name, city, address, capacity });
       setSuccess("Venue hall added successfully!");
       setName("");
       setAddress("");
@@ -52,7 +52,7 @@ export default function VenueManagement() {
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this venue?")) return;
     try {
-      await axios.delete(`/api/venues/${id}`);
+      await API.delete(`/venues/${id}`);
       fetchData();
     } catch (err) {
       alert("Failed to delete venue.");

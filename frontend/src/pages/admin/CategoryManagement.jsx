@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import API from "../../services/api";
 import { Tag, Plus, Trash2, Edit2, Sparkles, CheckCircle } from "lucide-react";
 
 export default function CategoryManagement() {
@@ -17,7 +17,7 @@ export default function CategoryManagement() {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get("/api/categories");
+      const res = await API.get("/categories");
       setCategories(res.data);
     } catch (err) {
       console.error("Failed to fetch categories", err);
@@ -32,7 +32,7 @@ export default function CategoryManagement() {
     setSuccess("");
 
     try {
-      await axios.post("/api/categories", { name, description, icon });
+      await API.post("/categories", { name, description, icon });
       setSuccess("Category added successfully!");
       setName("");
       setDescription("");
@@ -45,7 +45,7 @@ export default function CategoryManagement() {
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this category?")) return;
     try {
-      await axios.delete(`/api/categories/${id}`);
+      await API.delete(`/categories/${id}`);
       fetchCategories();
     } catch (err) {
       alert("Failed to delete category.");

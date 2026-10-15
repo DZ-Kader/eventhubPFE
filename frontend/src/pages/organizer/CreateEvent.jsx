@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import API from "../../services/api";
 import { Calendar, MapPin, Tag, Image, Clock, ArrowRight, ArrowLeft, CheckCircle, Sparkles } from "lucide-react";
 
 export default function CreateEvent() {
@@ -42,9 +42,9 @@ export default function CreateEvent() {
   const fetchMetaData = async () => {
     try {
       const [catRes, cityRes, venueRes] = await Promise.all([
-        axios.get("/api/categories"),
-        axios.get("/api/cities"),
-        axios.get("/api/venues")
+        API.get("/categories"),
+        API.get("/cities"),
+        API.get("/venues")
       ]);
       setCategories(catRes.data);
       setCities(cityRes.data);
@@ -79,7 +79,7 @@ export default function CreateEvent() {
         startDate: formData.startDate || todayStr,
         endDate: formData.endDate || nextWeekStr
       };
-      await axios.post("/api/events", payload);
+      await API.post("/events", payload);
       navigate("/organizer");
     } catch (err) {
       setError(err.response?.data?.message || "Failed to submit event. Check inputs.");
