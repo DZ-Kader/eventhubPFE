@@ -1,0 +1,13 @@
+{
+  "name": "eventoria-pfe",
+  "version": "1.0.0",
+  "private": true,
+  "description": "EVENTORIA - The Event Hub of Algeria (Final Year Project PFE)",
+  "scripts": {
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "seed": "cd backend && npm run seed",
+    "build:frontend": "cd frontend && npm run build",
+    "start:backend": "cd backend && npm start"
+  }
+}
