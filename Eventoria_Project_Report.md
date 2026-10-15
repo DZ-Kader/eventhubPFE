@@ -7,8 +7,11 @@
 
 **EVENTORIA** is a centralized event discovery, publishing, and ticketing platform designed for the Algerian ecosystem (Technology bootcamps, university workshops, agricultural expos, trade fairs, and professional career days). It resolves the problem of scattered event announcements across unorganized social media pages and private channels.
 
-### Key Technical Highlights
-- **Tech Stack**: Full-Stack MERN (MongoDB, Express.js, React 19, Node.js)
+### Key Technical Highlights & Live Links
+- **Production Web App**: [https://eventhubpfe.vercel.app](https://eventhubpfe.vercel.app)
+- **Production REST API**: [https://eventoria-api.onrender.com](https://eventoria-api.onrender.com)
+- **Source Code Repository**: [https://github.com/DZ-Kader/eventhubPFE](https://github.com/DZ-Kader/eventhubPFE)
+- **Tech Stack**: Full-Stack MERN (MongoDB Atlas, Express.js, React 19, Node.js)
 - **Frontend Architecture**: Tailwind CSS v4, Lucide Icons, Glassmorphism design system, Recharts analytics
 - **Security & RBAC**: Token-based authentication (JWT), bcrypt password hashing, and role-based access control (`user`, `organizer`, `admin`)
 - **Containerization & Deployment**: Multi-container Docker compose configuration (MongoDB 6.0, Node.js REST API, Nginx / Vite SPA)
@@ -224,14 +227,14 @@ sequenceDiagram
 
 Authentic screenshots captured from live application routes:
 
-- 🏠 **Public Homepage**: [docs/screenshots/home-page.png](file:///c:/Users/dell/Desktop/GomyCodeAcademy/eventhubPFE/docs/screenshots/home-page.png)
-- 🔍 **Event Discovery Hub**: [docs/screenshots/discover-page.png](file:///c:/Users/dell/Desktop/GomyCodeAcademy/eventhubPFE/docs/screenshots/discover-page.png)
-- 📄 **Event Details**: [docs/screenshots/event-details-page.png](file:///c:/Users/dell/Desktop/GomyCodeAcademy/eventhubPFE/docs/screenshots/event-details-page.png)
-- 🔐 **Authentication Form**: [docs/screenshots/login-page.png](file:///c:/Users/dell/Desktop/GomyCodeAcademy/eventhubPFE/docs/screenshots/login-page.png)
-- 🎟️ **User Dashboard & Pass**: [docs/screenshots/user-dashboard.png](file:///c:/Users/dell/Desktop/GomyCodeAcademy/eventhubPFE/docs/screenshots/user-dashboard.png)
-- 📊 **Organizer Dashboard**: [docs/screenshots/organizer-dashboard.png](file:///c:/Users/dell/Desktop/GomyCodeAcademy/eventhubPFE/docs/screenshots/organizer-dashboard.png)
-- ➕ **3-Step Event Creator**: [docs/screenshots/create-event-page.png](file:///c:/Users/dell/Desktop/GomyCodeAcademy/eventhubPFE/docs/screenshots/create-event-page.png)
-- 🛡️ **Admin Moderation Queue**: [docs/screenshots/admin-dashboard.png](file:///c:/Users/dell/Desktop/GomyCodeAcademy/eventhubPFE/docs/screenshots/admin-dashboard.png)
+- 🏠 **Public Homepage**: [docs/screenshots/home-page.png](docs/screenshots/home-page.png)
+- 🔍 **Event Discovery Hub**: [docs/screenshots/discover-page.png](docs/screenshots/discover-page.png)
+- 📄 **Event Details**: [docs/screenshots/event-details-page.png](docs/screenshots/event-details-page.png)
+- 🔐 **Authentication Form**: [docs/screenshots/login-page.png](docs/screenshots/login-page.png)
+- 🎟️ **User Dashboard & Pass**: [docs/screenshots/user-dashboard.png](docs/screenshots/user-dashboard.png)
+- 📊 **Organizer Dashboard**: [docs/screenshots/organizer-dashboard.png](docs/screenshots/organizer-dashboard.png)
+- ➕ **3-Step Event Creator**: [docs/screenshots/create-event-page.png](docs/screenshots/create-event-page.png)
+- 🛡️ **Admin Moderation Queue**: [docs/screenshots/admin-dashboard.png](docs/screenshots/admin-dashboard.png)
 
 ---
 
