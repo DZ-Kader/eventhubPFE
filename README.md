@@ -46,8 +46,6 @@
 * [📡 REST API Documentation](#-rest-api-documentation)
 * [🧪 Testing & Quality Assurance](#-testing--quality-assurance)
 * [🔮 Future Enhancements](#-future-enhancements)
-* [📄 Academic Defense Report](#-academic-defense-report)
-* [📜 License](#-license)
 
 ---
 
@@ -570,22 +568,3 @@ Potential roadmap items for post-graduation iteration:
 
 ---
 
-# 📄 Academic Defense Report
-
-A formal technical design document structured specifically for the Final Year Project (PFE) jury defense is available in this repository:
-👉 **[Read the Full PFE Project Report (Eventoria_Project_Report.md)](Eventoria_Project_Report.md)**
-
-It details the functional specifications, UML state charts, sequence interactions, architectural design decisions, and database indexing strategies.
-
----
-
-# 📜 License
-
-This project was developed as a Final Year Project (PFE) for academic evaluation.
-Distributed under the **ISC License**.
-
----
-
-<div align="center">
-  <sub>Developed for the Algerian tech & cultural community.</sub>
-</div>
