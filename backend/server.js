@@ -26,6 +26,18 @@ app.get("/", (req, res) => {
   res.send("Eventoria API Running");
 });
 
+app.get("/api/seed", async (req, res) => {
+  try {
+    const seeder = require("./seed/seeder");
+    if (typeof seeder === "function") {
+      await seeder();
+    }
+    res.json({ success: true, message: "Database seeded successfully!" });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
 // Port fallback
 const PORT = process.env.PORT || 5000;
 

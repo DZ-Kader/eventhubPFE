@@ -432,13 +432,20 @@ const seedDatabase = async () => {
     });
 
     console.log("Database Seeded Successfully!");
-    await mongoose.connection.close();
-    process.exit(0);
-
+    return { success: true };
   } catch (err) {
     console.error("Seeder encountered error:", err);
-    process.exit(1);
+    throw err;
   }
 };
 
-seedDatabase();
+if (require.main === module) {
+  seedDatabase().then(() => {
+    mongoose.connection.close();
+    process.exit(0);
+  }).catch(() => {
+    process.exit(1);
+  });
+}
+
+module.exports = seedDatabase;
