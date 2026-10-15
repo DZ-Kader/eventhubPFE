@@ -57,6 +57,7 @@ The EVENTORIA platform is fully deployed and accessible on the cloud:
 * **Production Web App**: 👉 **[https://eventhubpfe.vercel.app](https://eventhubpfe.vercel.app)**
 * **Production REST API**: 👉 **[https://eventoria-api.onrender.com](https://eventoria-api.onrender.com)**
 * **Database Layer**: MongoDB Atlas Cloud Cluster
+* **🎥 Video Walkthrough**: [docs/video/eventoria_live_demo.webm](docs/video/eventoria_live_demo.webm) *(High-definition video tour of all workflows)*
 
 ---
 
