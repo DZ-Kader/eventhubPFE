@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "/api"
+  baseURL: import.meta.env.VITE_API_URL || "https://eventoria-api.onrender.com/api"
 });
 
 // Request interceptor to attach JWT token
